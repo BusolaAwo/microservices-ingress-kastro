@@ -9,11 +9,11 @@ pipeline {
         APP_NAME = 'techsolutions'
     }
 
-    stages {
-        stage('Checkout') {
+    stage('Checkout') {
             steps {
-                echo 'Checking out source code...'
-                git 'https://github.com/KastroVKiran/microservices-ingress.git'
+                echo 'Checking out source code from master branch...'
+                // Explicitly defining the branch as master to avoid the previous error
+                git branch: 'master', url: 'https://github.com/BusolaAwo/microservices-ingress-kastro.git'
             }
         }
 
